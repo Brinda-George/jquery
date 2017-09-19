@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Calculator</title>
+    <!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  <style>
+    .container{
+      margin-top: 100px;
+    }
+    .wrapper{
+      width: 450px;
+      height: 450px;
+    }
+    .wrapper ul{
+      list-style: none;
+      
+    } 
+    .wrapper ul li{
+      
+    }
+    button{
+      width:100px;
+      height:100px;
+      float:left;
+    }
+    .printResult{
+      margin-left: 40px;
+      width:400px;
+      height: 50px;
+      border: solid 1px;
+    }
+    .print{
+      width:400px;
+      height:50px;
+    }
+
+  </style>
+  </head>
+  <body>
+    <div class="container">
+    <div class="print">
+    </div>
+      <div class-="printResult">
+    </div>
+    <div class="wrapper">
+      <ul>
+        <li><button class="btn btn-default" rel="7" value="number">7</button></li>
+        <li><button class="btn btn-default" rel="8" value="number">8</button></li>
+        <li><button class="btn btn-default" rel="9" value="number">9</button></li>
+        <li><button class="btn btn-default" rel="/" value="operator">/</button></li>
+
+        <li><button class="btn btn-default" rel="4" value="number">4</button></li>
+        <li><button class="btn btn-default" rel="5" value="number">5</button></li>
+        <li><button class="btn btn-default" rel="6" value="number">6</button></li>
+        <li><button class="btn btn-default" rel="*" value="operator">*</button></li>
+
+        <li><button class="btn btn-default" rel="1" value="number">1</button></li>
+        <li><button class="btn btn-default" rel="2" value="number">2</button></li>
+        <li><button class="btn btn-default" rel="3" value="number">3</button></li>
+        <li><button class="btn btn-default" rel="-" value="operator">-</button></li>
+
+        <li><button class="btn btn-default" rel="0" value="number">0</button></li>
+        <li><button class="btn btn-default"></button></li>
+        <li><button class="btn btn-default" rel="=" value="equals">=</button></li>
+        <li><button class="btn btn-default" rel="+" value="operator">+</button></li>
+      </ul>
+    </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+       $(document).on('click', 'button', function () {
+          var clicked = $(this).text();
+
+            if(clicked == "=")
+            {
+                var exp = $('.print').text();
+               // alert(exp);
+                 var result = eval(exp);
+                 //alert(result);
+                 $(".printResult").text(result);
+            }
+            else
+            {
+                 var indisplay = $('.print').text();
+                 var newdisplay = indisplay+clicked;
+            }
+            
+             $(".print'").text(newdisplay); 
+        });
+    });
+    </script>
+  </body>
+</html>

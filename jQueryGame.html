@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>jQuery Event Game</title>
+    <!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+    	.wrapper{
+    		width: 502px;
+    		display: table;
+    		border-right: 1px solid #828282;
+    		border-bottom: 1px solid #828282;
+    		margin: auto;
+    	}
+    	.notsafe{
+    		width: 50px;
+    		height: 50px;
+    		background-color: #ff7c7c;
+    		float: left;
+    		border-top: 1px solid #828282;
+    		border-left: 1px solid #828282;
+    	}
+    	.safe{
+    		width: 50px;
+    		height: 50px;
+    		background-color: #fff;
+    		float: left;
+    		border-top: 1px solid #828282;
+    		border-left: 1px solid #828282;
+    		text-align: center;
+    		line-height: 50px;
+    		font-size: 25px;
+    	}
+    	h2,h1,h4{
+    		text-align: center;
+            color: #fff;
+    		}
+        .glyphicon-heart{
+            font-size: 30px;
+            display: inline-block;
+            color: red;
+        }
+        .hearts{
+            margin-left: 47%;
+        }
+    </style>
+  </head>
+  <body style="background-image: url(image.jpg); background-size: 100% 120%; ">
+  <div class="container-fluid">
+    <h1>JQuery Event Game</h1><br>
+    <h2><span id="totalCount">0</span> of <span id="total">0</span> blocks completed in <span id="duration">0</span> seconds</h2><br>
+    <h4>Life Remaining</h4>
+    <div class="hearts">
+        <span id="l1" class="glyphicon glyphicon-heart"></span>
+        <span id="l2" class="glyphicon glyphicon-heart"></span>
+        <span id="l3" class="glyphicon glyphicon-heart"></span>
+    </div><br>
+    <div class="wrapper">
+    	<div class="notsafe"></div>
+    	<div class="notsafe"></div>
+    	<div class="notsafe"></div>
+    	<div class="notsafe"></div>
+    	<div class="notsafe"></div>
+    	<div class="notsafe"></div>
+    	<div class="notsafe"></div>
+    	<div class="notsafe"></div>
+    	<div class="notsafe"></div>
+    	<div class="notsafe"></div>
+
+    	<div class="safe" id="start"><span class="glyphicon glyphicon-play"></span></div>
+    	<div class="safe"></div>
+    	<div class="notsafe"></div>
+    	<div class="notsafe"></div>
+    	<div class="notsafe"></div>
+    	<div class="notsafe"></div>
+    	<div class="notsafe"></div>
+    	<div class="notsafe"></div>
+    	<div class="notsafe"></div>
+    	<div class="notsafe"></div>
+
+    	<div class="notsafe"></div>
+    	<div class="safe"></div>
+    	<div class="notsafe"></div>
+    	<div class="safe"></div>
+    	<div class="safe"></div>
+    	<div class="safe"></div>
+    	<div class="safe"></div>
+    	<div class="safe"></div>
+    	<div class="notsafe"></div>
+    	<div class="notsafe"></div>
+
+    	<div class="notsafe"></div>
+    	<div class="safe"></div>
+    	<div class="notsafe"></div>
+    	<div class="safe"></div>
+    	<div class="notsafe"></div>
+    	<div class="notsafe"></div>
+    	<div class="notsafe"></div>
+    	<div class="safe"></div>
+    	<div class="safe"></div>
+    	<div class="notsafe"></div>
+
+    	<div class="notsafe"></div>
+    	<div class="safe"></div>
+    	<div class="notsafe"></div>
+    	<div class="safe"></div>
+    	<div class="notsafe"></div>
+    	<div class="notsafe"></div>
+    	<div class="notsafe"></div>
+    	<div class="notsafe"></div>
+    	<div class="safe"></div>
+    	<div class="notsafe"></div>
+
+    	<div class="notsafe"></div>
+    	<div class="safe"></div>
+    	<div class="notsafe"></div>
+    	<div class="safe"></div>
+    	<div class="notsafe"></div>
+    	<div class="safe"><span class="glyphicon glyphicon-star"></span></div>
+    	<div class="notsafe"></div>
+    	<div class="notsafe"></div>
+    	<div class="safe"></div>
+    	<div class="notsafe"></div>
+
+    	<div class="notsafe"></div>
+    	<div class="safe"></div>
+    	<div class="notsafe"></div>
+    	<div class="safe"></div>
+    	<div class="safe"></div>
+    	<div class="safe"></div>
+    	<div class="notsafe"></div>
+    	<div class="notsafe"></div>
+    	<div class="safe"></div>
+    	<div class="notsafe"></div>
+
+    	<div class="notsafe"></div>
+    	<div class="safe"></div>
+    	<div class="notsafe"></div>
+    	<div class="notsafe"></div>
+    	<div class="notsafe"></div>
+    	<div class="notsafe"></div>
+    	<div class="notsafe"></div>
+    	<div class="notsafe"></div>
+    	<div class="safe"></div>
+    	<div class="notsafe"></div>
+
+    	<div class="notsafe"></div>
+    	<div class="safe"></div>
+    	<div class="safe"></div>
+    	<div class="notsafe"></div>
+    	<div class="notsafe"></div>
+    	<div class="notsafe"></div>
+    	<div class="notsafe"></div>
+    	<div class="safe"></div>
+    	<div class="safe"></div>
+    	<div class="notsafe"></div>
+
+    	<div class="notsafe"></div>
+    	<div class="notsafe"></div>
+    	<div class="safe"></div>
+    	<div class="safe"></div>
+    	<div class="safe"></div>
+    	<div class="safe"></div>
+    	<div class="safe"></div>
+    	<div class="safe"></div>
+    	<div class="notsafe"></div>
+    	<div class="notsafe"></div>
+
+    	<div class="notsafe"></div>
+    	<div class="notsafe"></div>
+    	<div class="notsafe"></div>
+    	<div class="notsafe"></div>
+    	<div class="notsafe"></div>
+    	<div class="notsafe"></div>
+    	<div class="notsafe"></div>
+    	<div class="notsafe"></div>
+    	<div class="notsafe"></div>
+    	<div class="notsafe"></div>
+    </div>
+  </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="fireworks.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
